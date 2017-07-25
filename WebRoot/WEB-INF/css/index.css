@@ -1,0 +1,208 @@
+.picture{
+    padding: 7% 15%;
+}
+.second-column{
+    position: relative;
+    left: 770px;
+    top: -420px; 
+}
+
+
+
+
+
+.top-img-header{
+    height: 54px;
+    background-color: #efefef;
+}
+#proName{
+    float: left;
+    margin: 22px 0 0 77px;
+    font-family: "Microsoft YaHei UI";
+    font-size: 13px;
+    color: rgb(125,125,125);
+}
+.top-img-nav{
+    float: right;
+    margin: 11px 51px 0 0 ;
+}
+.top-img-nav ul{ color: rgb(125,125,125)}
+.top-img-nav ul li{
+    display: inline-block;
+}
+.top-img-nav ul li a{
+    font-family: "Microsoft YaHei UI";
+    font-size: 13px;
+    color: rgb(125,125,125);
+}
+.pro-swipe{
+    position: relative;
+    padding-top: 46%!important;
+    height: 0;
+    background-color: #efefef;
+}
+.arrow-control{
+    position: absolute;
+    width: 100%;
+    top: 45%;
+    left: 0;
+    z-index: 999;
+}
+#left-arrow{
+    display: block;
+    float: left;
+    width: 4%;
+    padding-top: 6%;
+    margin-left: 7%;
+    height: 0;
+    background: transparent url("../img/后退.png") no-repeat scroll center;
+    background-size: contain;
+    cursor: pointer;
+}
+#right-arrow{
+    display: block;
+    float: right;
+    width: 4%;
+    padding-top: 6%;
+    margin-right: 7%;
+    height: 0;
+    background: transparent url("../img/前进.png") no-repeat scroll center;
+    background-size: contain;
+    cursor: pointer;
+}
+.square-control{
+    position: absolute;
+    left: 0;
+    bottom: 5%;
+    width: 100%;
+    text-align: center;
+    z-index: 999;
+}
+.square-control span{
+    padding: 0 1%;
+    background: transparent url("../img/浅色进度条.png") no-repeat scroll center;
+    background-size: contain;
+    cursor: pointer;
+}
+.pro{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+}
+.pro1-text{
+    position: absolute;
+    top: 26%;
+    left: 20%;
+}
+.pro h5{
+    font-family: "Microsoft YaHei UI Bold";
+    font-size: 34px;
+    color: rgb(165,167,172);
+}
+.thin{
+    font-family: "Microsoft YaHei UI"!important;
+}
+.box{  text-align: left; margin-top: 30px  }
+.box span{
+    padding: 8px;
+    color: #fff;
+    font-size: 24px;
+    background-color: #a5a7ac;
+}
+.readmore{
+    display: block;
+    margin-top: 80px;
+    padding-left: 30px;
+    font-family: "Microsoft YaHei UI Bold";
+    font-size: 15px;
+    color: rgb(191,187,187);
+    background: transparent url("../img/首页---Assistorarrow.png") no-repeat scroll left;
+    background-size: contain;
+    cursor: pointer;
+}
+.pro1-img{
+    position: absolute;
+    width: 49%;
+    right: 6%;
+    top: 5%;
+}
+.pro2-text{
+    position: absolute;
+    top: 26%;
+    left: 20%;
+}
+.pro2-img{
+    position: absolute;
+    width: 49%;
+    right: 6%;
+    top: 15%;
+}
+.pro3-text{
+    position: absolute;
+    top: 26%;
+    left: 20%;
+}
+.pro2-text h5,.pro3-text h5{
+    color: rgb(118,112,112);
+}
+.pro3-img{
+    position: absolute;
+    width: 49%;
+    right: 6%;
+    top: 18%;
+}
+.pro4-text{
+    position: absolute;
+    top: 26%;
+    left: 20%;
+}
+.pro4-img{
+    position: absolute;
+    width: 23%;
+    right: 27%;
+    top: 18%;
+}
+.pro5-text{
+    position: absolute;
+    top: 26%;
+    left: 20%;
+}
+.pro5-img{
+    position: absolute;
+    width: 27%;
+    right: 27%;
+    top: 18%;
+}
+.video-container{
+    margin: 20px 0;
+    background-color: #fff;
+}
+.vcontent{
+    position: relative;
+}
+.video-img{
+    position: absolute;
+    top:0;
+    left: 0;
+    width: 100%;
+    z-index: 999;
+}
+.video{
+    width: 100%;
+}
+.footer{
+    padding: 30px;
+    background-color: #fff;
+}
+.footer ul li{
+    padding: 5px 0;
+}
+.footer ul li a{
+    font-family: "Microsoft YaHei UI";
+    font-size: 13px;
+    color: #b5b5b5;
+    cursor: pointer;
+}

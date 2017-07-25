@@ -1,0 +1,36 @@
+.footer{
+    padding: 30px;
+    background-color: #fff;
+}
+.footer ul li{
+    padding: 5px 0;
+}
+.footer ul li a{
+    font-family: "Microsoft YaHei UI";
+    font-size: 13px;
+    color: #b5b5b5;
+    cursor: pointer;
+}
+.footer-info{ position: relative}
+.footer-info p{
+    padding-left: 35px;
+    font-size: 14px;
+    color: #737373 ;
+    line-height: 20px;
+}
+.footer-info .img-link{
+    position: absolute;
+    bottom: 27px;
+    right: 118px;
+}
+.footer-info .img-link img{
+    margin: 0 2px;
+    width: 30px;
+}
+.warning{
+    font-weight: 600;
+    color: red;
+}
+.black{
+    color: #000;
+}

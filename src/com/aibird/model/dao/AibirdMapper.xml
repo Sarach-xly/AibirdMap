@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.aibird.model.dao.AibirdMapper" >
+  <resultMap id="BaseResultMap" type="com.aibird.model.entity.Aibird" >
+    <id column="aibirdId" property="aibirdid" jdbcType="INTEGER" />
+    <result column="userPhone" property="userphone" jdbcType="VARCHAR" />
+    <result column="type" property="type" jdbcType="VARCHAR" />
+    <result column="name" property="name" jdbcType="VARCHAR" />
+    <result column="startx" property="startx" jdbcType="VARCHAR" />
+    <result column="starty" property="starty" jdbcType="VARCHAR" />
+    <result column="endx" property="endx" jdbcType="VARCHAR" />
+    <result column="endy" property="endy" jdbcType="VARCHAR" />
+    <result column="realendx" property="realendx" jdbcType="VARCHAR" />
+    <result column="realendy" property="realendy" jdbcType="VARCHAR" />
+    <result column="createTime" property="createtime" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    aibirdId, userPhone, type, name, startx, starty, endx, endy, realendx, realendy, 
+    createTime
+  </sql>
+  
+  <select id="selectById" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from aibird
+    where aibirdId = #{aibirdid,jdbcType=INTEGER}
+  </select>
+  
+  <select id="selectByPhone" resultMap="BaseResultMap" parameterType="java.lang.String">
+  select 
+  <include refid="Base_Column_List" />
+  from aibird
+  where userPhone = #{userphone,jdbcType=VARCHAR}
+  </select>
+  
+  <select id="selectByUserphone" resultMap="BaseResultMap" parameterType="java.lang.String">
+  select
+  <include refid="Base_Column_List"/>
+  from aibird
+  where userPhone = #{userphone,jdbcType=VARCHAR}
+  </select>
+  
+  <select id="selectAll0" resultMap="BaseResultMap" parameterType="java.lang.Long" >
+  select 
+  <include refid="Base_Column_List"/>
+  from aibird
+  where (1*60*1000*60*60)>(#{createtime,jdbcType=VARCHAR}-createTime)
+  </select>
+  
+  <select id="selectAll1" resultMap="BaseResultMap" parameterType="java.lang.Long">
+  select
+  <include refid="Base_Column_List"/>
+  from aibird
+  where (#{createtime,jdbcType=VARCHAR}-createTime)>(1*60*1000*60*60)
+  </select>
+  
+  <select id="selectAll" resultMap="BaseResultMap">
+     select
+     <include refid="Base_Column_List"/>
+     from aibird
+  </select>
+  
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from aibird
+    where aibirdId = #{aibirdid,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.aibird.model.entity.Aibird" >
+    insert into aibird (aibirdId, userPhone, type, 
+      name, startx, starty, 
+      endx, endy, realendx, 
+      realendy, createTime)
+    values (#{aibirdid,jdbcType=INTEGER}, #{userphone,jdbcType=VARCHAR}, #{type,jdbcType=VARCHAR}, 
+      #{name,jdbcType=VARCHAR}, #{startx,jdbcType=VARCHAR}, #{starty,jdbcType=VARCHAR}, 
+      #{endx,jdbcType=VARCHAR}, #{endy,jdbcType=VARCHAR}, #{realendx,jdbcType=VARCHAR}, 
+      #{realendy,jdbcType=VARCHAR}, #{createtime,jdbcType=VARCHAR})
+  </insert>
+  <insert id="add" parameterType="com.aibird.model.entity.Aibird" >
+    insert into aibird
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="aibirdid != null" >
+        aibirdId,
+      </if>
+      <if test="userphone != null" >
+        userPhone,
+      </if>
+      <if test="type != null" >
+        type,
+      </if>
+      <if test="name != null" >
+        name,
+      </if>
+      <if test="startx != null" >
+        startx,
+      </if>
+      <if test="starty != null" >
+        starty,
+      </if>
+      <if test="endx != null" >
+        endx,
+      </if>
+      <if test="endy != null" >
+        endy,
+      </if>
+      <if test="realendx != null" >
+        realendx,
+      </if>
+      <if test="realendy != null" >
+        realendy,
+      </if>
+      <if test="createtime == null" >
+        createTime,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="aibirdid != null" >
+        #{aibirdid,jdbcType=INTEGER},
+      </if>
+      <if test="userphone != null" >
+        #{userphone,jdbcType=VARCHAR},
+      </if>
+      <if test="type != null" >
+        #{type,jdbcType=VARCHAR},
+      </if>
+      <if test="name != null" >
+        #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="startx != null" >
+        #{startx,jdbcType=VARCHAR},
+      </if>
+      <if test="starty != null" >
+        #{starty,jdbcType=VARCHAR},
+      </if>
+      <if test="endx != null" >
+        #{endx,jdbcType=VARCHAR},
+      </if>
+      <if test="endy != null" >
+        #{endy,jdbcType=VARCHAR},
+      </if>
+      <if test="realendx != null" >
+        #{realendx,jdbcType=VARCHAR},
+      </if>
+      <if test="realendy != null" >
+        #{realendy,jdbcType=VARCHAR},
+      </if>
+      now(),
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.aibird.model.entity.Aibird" >
+    update aibird
+    <set >
+      <if test="userphone != null" >
+        userPhone = #{userphone,jdbcType=VARCHAR},
+      </if>
+      <if test="type != null" >
+        type = #{type,jdbcType=VARCHAR},
+      </if>
+      <if test="name != null" >
+        name = #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="startx != null" >
+        startx = #{startx,jdbcType=VARCHAR},
+      </if>
+      <if test="starty != null" >
+        starty = #{starty,jdbcType=VARCHAR},
+      </if>
+      <if test="endx != null" >
+        endx = #{endx,jdbcType=VARCHAR},
+      </if>
+      <if test="endy != null" >
+        endy = #{endy,jdbcType=VARCHAR},
+      </if>
+      <if test="realendx != null" >
+        realendx = #{realendx,jdbcType=VARCHAR},
+      </if>
+      <if test="realendy != null" >
+        realendy = #{realendy,jdbcType=VARCHAR},
+      </if>
+      <if test="createtime != null" >
+        createTime = #{createtime,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where aibirdId = #{aibirdid,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.aibird.model.entity.Aibird" >
+    update aibird
+    set userPhone = #{userphone,jdbcType=VARCHAR},
+      type = #{type,jdbcType=VARCHAR},
+      name = #{name,jdbcType=VARCHAR},
+      startx = #{startx,jdbcType=VARCHAR},
+      starty = #{starty,jdbcType=VARCHAR},
+      endx = #{endx,jdbcType=VARCHAR},
+      endy = #{endy,jdbcType=VARCHAR},
+      realendx = #{realendx,jdbcType=VARCHAR},
+      realendy = #{realendy,jdbcType=VARCHAR},
+      createTime = #{createtime,jdbcType=VARCHAR}
+    where aibirdId = #{aibirdid,jdbcType=INTEGER}
+  </update>
+</mapper>
